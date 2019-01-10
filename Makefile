@@ -1,11 +1,9 @@
 
-default: start-fastai
+default: start
 
-start-fastai:
-	docker run -it --runtime=nvidia -p 8888:8888 \
-		-v ${HOME}/code/fastai:/content/fastai \
-		--rm thesoenke/dl-setup \
-		jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+start:
+	docker run -it --runtime=nvidia -p 8888:8888 --rm thesoenke/dl-fastai \
+		jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
 
-build-fastai:
-	docker build -t thesoenke/dl-setup fastai/
+build:
+	docker build -t thesoenke/dl-fastai fastai/
