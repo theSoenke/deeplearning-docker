@@ -23,5 +23,6 @@ ENV PATH /opt/conda/bin:/opt/conda/envs/fastai/bin:$PATH
 
 WORKDIR /notebooks/fastai
 RUN conda env create -f environment.yml
+RUN wget http://files.fast.ai/data/dogscats.zip && unzip dogscats.zip -d ../data/  && rm -f dogscats.zip
 
 CMD conda activate fastai

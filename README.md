@@ -2,8 +2,7 @@
 
 Setup for Deep Learning experiments in Docker with Cuda
 
-## Setup
+## Setup fastai
 1. Install nvidia-docker
-2. Build image `make build`
-3. Start container `make start`
+2. Build image and start container `make fastai`
 4. Open [http://localhost:3000](localhost:8888)
