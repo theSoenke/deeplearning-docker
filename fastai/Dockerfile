@@ -24,5 +24,6 @@ ENV PATH /opt/conda/bin:/opt/conda/envs/fastai/bin:$PATH
 WORKDIR /notebooks/fastai
 RUN conda env create -f environment.yml
 RUN wget http://files.fast.ai/data/dogscats.zip && unzip dogscats.zip -d ../data/  && rm -f dogscats.zip
+RUN wget files.fast.ai/part2/lesson14/rossmann.tgz && mkdir -p courses/dl1/data/rossmann && tar -xf rossmann.tgz --directory courses/dl1/data/rossmann  && rm -f rossmann.tgz
 
 CMD conda activate fastai
