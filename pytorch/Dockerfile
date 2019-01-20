@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     libjpeg-dev \
 	zip \
-	unzip
+	unzip \
+    libgtk2.0-dev
 
 RUN pip3 install torch torchvision fastai pandas matplotlib numpy imageio opencv-python jupyter
 
