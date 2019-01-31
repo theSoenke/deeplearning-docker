@@ -12,6 +12,6 @@ RUN apt-get update && apt-get install -y \
 	unzip \
     libgtk2.0-dev
 
-RUN pip3 install torch torchvision fastai pandas matplotlib numpy imageio opencv-python jupyter
+RUN pip3 install torch torchvision fastai pandas matplotlib numpy imageio opencv-python jupyterlab
 
 WORKDIR /notebooks
