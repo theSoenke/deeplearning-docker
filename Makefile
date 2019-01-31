@@ -9,7 +9,7 @@ fastai-v2:
 
 fastai-v3:
 	docker build -t thesoenke/dl-fastai-v3 fastai-v3/
-	docker run -it --runtime=nvidia -p 8888:8888 --rm -v ${HOME}/data:/data thesoenke/dl-fastai-v3
+	docker run -it --runtime=nvidia -p 8888:8888 --shm-size 8G --rm -v ${HOME}/data:/data thesoenke/dl-fastai-v3
 
 pytorch:
 	docker build -t thesoenke/dl-pytorch pytorch/
