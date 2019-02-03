@@ -1,7 +1,6 @@
 FROM nvidia/cuda:9.2-base
 
 RUN apt-get update && apt-get install -y \
-    python3-pip \
     git \
     curl \
     wget \
@@ -12,6 +11,16 @@ RUN apt-get update && apt-get install -y \
 	unzip \
     libgtk2.0-dev
 
-RUN pip3 install torch torchvision fastai pandas matplotlib numpy imageio opencv-python jupyterlab
+RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  && \
+     chmod +x ~/miniconda.sh && \
+     ~/miniconda.sh -b -p /opt/conda && \
+     rm ~/miniconda.sh && \
+    /opt/conda/bin/conda install conda-build
+ENV PATH=$PATH:/opt/conda/bin/
+COPY environment.yml /environment.yml
+RUN conda env create -f environment.yml
 
 WORKDIR /notebooks
+
+COPY run.sh /run.sh
+CMD ["/run.sh"]
