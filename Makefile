@@ -13,4 +13,4 @@ fastai-v3:
 
 pytorch:
 	docker build -t thesoenke/dl-pytorch pytorch/
-	docker run -it --runtime=nvidia -p 8888:8888 --shm-size 8G --rm -v ${HOME}/data:/data -v ${HOME}/projects/ml-notebooks:/notebooks thesoenke/dl-pytorch
+	docker run -it --runtime=nvidia -p 8888:8888 --shm-size 8G --rm -v ${HOME}/data:/data -v ${HOME}/projects/ml-experiments:/notebooks thesoenke/dl-pytorch

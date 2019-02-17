@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
 	zip \
 	unzip \
-    libgtk2.0-dev
+    libgtk2.0-dev \
+    ffmpeg
 
 RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  && \
      chmod +x ~/miniconda.sh && \
