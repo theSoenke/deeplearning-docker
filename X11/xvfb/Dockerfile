@@ -10,5 +10,7 @@ RUN  apt-get update && apt-get install -y --no-install-recommends \
     unzip
 
 ENV DISPLAY :1.0
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
 
 CMD ["./run.sh"]

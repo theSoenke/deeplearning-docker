@@ -19,3 +19,6 @@ RUN apt-get install -y --no-install-recommends \
     python3-dev \
     python3-pip \
     python3-setuptools
+
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
